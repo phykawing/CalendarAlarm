@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(cd \"D:/phykawing/GitHub/CalendarAlarm\" && ./gradlew assembleDebug 2>&1)",
+      "Bash(cd \"D:/phykawing/GitHub/CalendarAlarm\" && $LOCALAPPDATA/Android/Sdk/platform-tools/adb install -r app/build/outputs/apk/debug/app-debug.apk 2>&1)",
+      "Bash($LOCALAPPDATA/Android/Sdk/platform-tools/adb shell:*)",
+      "Bash(cd \"D:/phykawing/GitHub/CalendarAlarm\" && ./gradlew assembleDebug 2>&1 | tail -5)",
+      "Bash($LOCALAPPDATA/Android/Sdk/platform-tools/adb install:*)",
+      "Bash(cd \"D:/phykawing/GitHub/CalendarAlarm\" && ./gradlew assembleDebug 2>&1 | tail -15)",
+      "Bash(ADB=$LOCALAPPDATA/Android/Sdk/platform-tools/adb && \"$ADB\" install -r \"D:/phykawing/GitHub/CalendarAlarm/app/build/outputs/apk/debug/app-debug.apk\" 2>&1 && \"$ADB\" shell am force-stop com.phykawing.calendaralarm && \"$ADB\" shell am start -n com.phykawing.calendaralarm/.MainActivity 2>&1)",
+      "Bash(ADB=$LOCALAPPDATA/Android/Sdk/platform-tools/adb && \"$ADB\" logcat -d -t 200 2>&1 | grep -iE \"AlarmService|MediaPlayer|FATAL|Exception|Error.*alarm|Room\" | tail -20)",
+      "Bash(ADB=$LOCALAPPDATA/Android/Sdk/platform-tools/adb && \"$ADB\" logcat -d -t 500 2>&1 | grep -iE \"IllegalState|migration|Room|calendaralarm\" | tail -20)",
+      "Bash(./gradlew assembleDebug 2>&1 | tail -10)",
+      "Bash(\"$LOCALAPPDATA/Android/Sdk/platform-tools/adb.exe\" install:*)",
+      "Bash(./gradlew assembleRelease 2>&1 | tail -5)"
+    ]
+  }
+}
